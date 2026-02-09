@@ -1,0 +1,154 @@
+/* =========================================
+   1. CORE & NAVIGATION (GLOBAL SYSTEM)
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #0a1433;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0);
+    transition: all 0.4s ease;
+    animation: nav-bg-change linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 100px;
+}
+
+.nav-links-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* LOGO FIX */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+}
+
+.logo-brand, .logo-text {
+    font-size: 1.6rem;
+    color: #0a1433; /* Default for shop page usually dark */
+    transition: color 0.3s;
+}
+
+.logo-brand { font-weight: 800; letter-spacing: -1.5px; }
+.logo-text { font-weight: 300; letter-spacing: -0.5px; }
+
+.logo-tick {
+    stroke: #0056b3; /* Start blue for shop page visibility */
+    transform: rotate(-15deg);
+    margin-left: -2px;
+    transition: stroke 0.3s;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
+
+@keyframes nav-bg-change {
+    to {
+        background: #fff;
+        padding: 15px 50px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* =========================================
+   2. SHOP CONTENT
+   ========================================= */
+.container {
+  padding: 120px 8% 60px; /* Top padding to account for fixed nav */
+}
+
+.container h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.product {
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.product img {
+  width: 100%;
+  aspect-ratio: 1 / 1.2;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f9f9f9;
+  transition: transform 0.5s ease;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+.product h3 {
+  margin: 15px 0 5px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.product p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* =========================================
+   3. FOOTER
+   ========================================= */
+.main-footer {
+    background: linear-gradient(to bottom, #000000 0%, #001a4d 100%);
+    padding: 80px 8% 40px;
+    color: #fff;
+    margin-top: 100px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo { font-size: 1.5rem; font-weight: 300; }
+.footer-logo .logo-brand { color: #fff; font-weight: 800; }
+
+.footer-content-grid { display: flex; gap: 60px; }
+.footer-col h4 { font-size: 0.7rem; opacity: 0.6; margin-bottom: 20px; letter-spacing: 1px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li a { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
+.footer-bottom { margin-top: 40px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.75rem; color: #888; }

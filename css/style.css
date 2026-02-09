@@ -1,0 +1,982 @@
+/*
+    full page styles
+  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+/* 
+    navigation
+   */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    transition: all 0.4s ease;
+    animation: nav-bg-change linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 150px;
+}
+
+
+.logo-link {
+    display: flex;
+    align-items: center; gap: 4px;
+    text-decoration: none;
+}
+
+.logo-brand, .logo-text {
+    font-size: 25px;  color: white; 
+    transition: color 0.3s;
+}
+
+.logo-brand { font-weight: 800; letter-spacing: -1.5px; }
+.logo-text { font-weight: 300; letter-spacing: -0.5px; }
+
+.logo-tick {
+    stroke: white; 
+    transform: rotate(-15deg);
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.logo-brand, .logo-tick, .logo-text {
+    animation: logo-master-color linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 150px;
+}
+
+@keyframes logo-master-color {
+    to {
+        color: var(--final-c, #000);
+        stroke: var(--final-s, #0056b3);
+    }
+}
+
+.logo-brand { --final-c: #0056b3; }
+.logo-tick  { --final-s: #0056b3; }
+.logo-text  { --final-c: #000000; }
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14.4px;
+    text-transform: uppercase;
+    font-weight: 400;
+    animation: link-color-change linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 150px;
+}
+
+.btn-launch {
+    border: 1px solid #ffffff;
+    padding: 8px 20px;
+    border-radius: 2px;
+    text-decoration: none;
+    color: #fff;
+    animation: btn-border-change 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0px 150px; 
+}
+
+/* Navbar Scroll Keyframes */
+@keyframes nav-bg-change {
+    to {
+        background: rgba(255, 255, 255, 1);
+        padding: 15px 50px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@keyframes link-color-change {
+    to {
+        color: #000000;
+    }
+}
+
+
+@keyframes btn-border-change {
+    from {
+        border-color: #ffffff;
+        color: #ffffff;
+    }
+    to {
+        border-color: #000000;
+        color: #000000;
+    }
+}
+
+/* 
+    Video Background
+ */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;    justify-content: flex-start;
+    padding-left: 10%;
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 19.2px;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+    max-width: 600px;
+}
+
+/*
+    fly with us 
+   */
+.fly-with-us {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 100px 5%;
+}
+
+.container-fly {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.smallheading{
+    font-size: 12px;
+    font-weight: 700;
+    color: #0056b3;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.fly-with-us h2 {
+    font-size: 56px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+}
+
+.header-flex p {
+    max-width: 600px;
+    font-size: 17.5px;
+    color: #333;
+}
+
+
+
+
+.card-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+}
+
+.card-img img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+}
+
+.launch-grid {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.launch-card {
+    background-color: #f6f6f6;
+    padding: 40px;
+    position: relative;
+    transition: transform 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.launch-card:hover {
+    transform: translateY(-15px);
+}
+
+
+
+.card-number {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 24px;
+    color: #ddd;
+    font-weight: 700;
+}
+
+.launch-card h3 {
+    font-size: 32;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+/* 
+    buttons
+    */
+
+.btn-secondary {
+    display: inline-block;
+    padding: 16px 32px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12.8px;
+    font-weight: 700;
+    margin-right: 15px;
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+
+
+.btn-outline-pill {
+    padding: 12px 30px;
+    border: 1px solid #0056b3;
+    border-radius: 50px;
+    text-decoration: none;
+    color: #0056b3;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* 
+   newsroom 
+*/
+.newsroom {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 80px 5%;
+}
+
+.container-news {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+
+.breadcrumb-news {
+    font-size: 11.2px;
+    font-weight: 700;
+    color: #0056b3;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.newsroom h2 {
+    font-size: 56px;
+    font-weight: 400;
+}
+
+/* btns*/
+.btn-outline-pill.small {
+    padding: 8px 20px;
+    font-size: 10.4px;
+}
+
+/* grid  */
+.news-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.news-card {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.news-card:hover {
+    opacity: 0.8;
+}
+
+.news-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 15px; 
+    margin-bottom: 20px;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.news-date {
+    display: inline-block;
+    background-color: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 11.2px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.news-card h3 {
+    font-size: 17.6px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #222;
+}
+
+
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*
+  footer
+ */
+.main-footer {
+    background: linear-gradient(to bottom, #000000 0%, #001a4d 100%);
+    padding: 80px 8% 40px;
+    color: #fff;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.footer-top-row {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex: 1;
+}
+
+.footer-content-grid {
+    display: flex;
+    justify-content: flex-end;
+    gap: 100px;
+    width: 100%;
+}
+.footer-brand-logo {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-brand-logo .logo-brand, 
+.footer-brand-logo .logo-text {
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 25.6px;
+}
+
+.footer-brand-logo .logo-brand {
+    font-weight: 800;
+    letter-spacing: -1.5px;
+}
+
+.footer-brand-logo .logo-text {
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+
+
+.footer-links-grid {
+    display: grid;
+    flex: 2;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    width: 100%;
+}
+
+.footer-col h4 {
+    font-size: 11.2px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14.4px;
+    transition: opacity 0.3s;
+}
+
+.footer-col ul li a:hover {
+    opacity: 0.6;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 19.2px;
+    transition: transform 0.3s;
+}
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: 80px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #555;
+}
+
+@media (max-width: 900px) {
+    .footer-content-grid {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .launch-grid,
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* 
+    technology styles
+    */
+
+.tech-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('https://isaraerospace.com/static/technology/tech_header.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    padding: 0 8% 60px 8%;
+    color: #fff;
+    overflow: hidden;
+
+}
+
+.tech-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+    z-index: 1;
+}
+
+.tech-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.tech-breadcrumb {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0056b3;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.tech-content h1 {
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1.1;
+    max-width: 900px;
+    margin-bottom: 80px;
+}
+
+   /* technology page */
+
+
+.tech-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, 
+        rgba(1, 54, 159, 0.9) 0%, 
+        rgba(16, 100, 225, 0.4) 30%, 
+        rgba(0, 0, 0, 0) 60%, 
+        rgba(255, 255, 255, 0.1) 100%);
+    z-index: 1;
+}
+
+
+.tech-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* 
+    manufacturing
+    */
+.manufacturing-process, .behind-scenes {
+    background-color: #fff;
+    color: #000;
+    padding: 120px 8%;
+}
+
+.small-tag {
+    font-size: 11.2px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #0056b3;
+    border-radius: 50%;
+}
+
+.process-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+    margin-bottom: 80px;
+}
+
+.process-flex h2 {
+    font-size: 56px;
+    line-height: 1.1;
+    flex: 1;
+}
+
+.process-flex p {
+    flex: 1;
+    font-size: 17.6px;
+    color: #444;
+}
+
+.tech-gallery {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.gallery-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.tech-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px; 
+}
+
+/* 
+   bts video
+    */
+.behind-scenes h2 {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.sub-intro {
+    max-width: 800px;
+    margin-bottom: 60px;
+    font-size: 19.2px;
+}
+
+.video-placeholder {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+.tech-features-row {
+    display: flex;
+    gap: 40px;
+    padding-top: 40px;
+}
+
+.tech-feature {
+    flex: 1;
+}
+
+.tech-feature h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tech-feature p {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+}
+
+.forefront-section {
+    background-color: #fff;
+    color: #000;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.forefront-section h2 {
+    font-size: 48px;
+    font-weight: 400;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 600px;
+    border-radius: 24px;
+    overflow: hidden; 
+    background-color: #000;
+}
+
+.factory-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+.tech-image-mosaic {
+    background-color: #fff;
+    padding: 100px 5%;
+}
+
+.mosaic-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.5fr 1fr;
+    grid-template-rows: 400px 400px;
+    gap: 15px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.mosaic-item {
+    overflow: hidden;
+    border-radius: 12px; 
+}
+
+.mosaic-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.mosaic-item:hover img {
+    transform: scale(1.03);
+}
+
+.mosaic-item.tall {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+}
+
+.mosaic-item.giant {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+}
+
+.mosaic-item.small:nth-child(2) { grid-row: 1; grid-column: 2; }
+.mosaic-item.small:nth-child(3) { grid-row: 2; grid-column: 2; }
+
+.mosaic-item.medium:nth-child(5) { grid-row: 1; grid-column: 4; }
+.mosaic-item.medium:nth-child(6) { grid-row: 2; grid-column: 4; }
+
+
+/* 
+   career page styles
+*/
+.career-hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('https://isaraerospace.com/static/career/career_header.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end; 
+    padding: 0 8% 80px 8%;
+    color: #fff;
+}
+
+.career-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end;
+}
+
+.career-text-box {
+    max-width: 650px;
+}
+
+.career-text-box h1 {
+    font-size: 72px;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-top: 20px;
+}
+
+.btn-outline-pill.white-bg {
+    background-color: #fff;
+    color: #0056b3;
+    border: none;
+    padding: 15px 35px;
+    font-size: 11.2px;
+}
+
+.btn-outline-pill.white-bg:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .career-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .career-text-box h1 {
+        font-size: 48px;
+    }
+}
+
+
+/* 
+    career page 
+  */
+.life-at-isar {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 120px 8%;
+}
+
+.scroll-header{
+   
+    margin-left: 500px;
+    margin-bottom: 50px;
+}
+
+.container-life {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    gap: 80px; 
+}
+
+
+.life-sidebar {
+    flex: 0 0 250px; 
+}
+
+.dot-outline {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #0056b3;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.life-main-content {
+    flex: 1;
+}
+
+.life-main-content h2 {
+    font-size: 51px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    color: #111;
+}
+
+.picture-this h3 {
+    font-size: 29px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.picture-this ul {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.picture-this ul li {
+    font-size: 17.6px;
+    margin-bottom: 20px;
+    padding-left: 25px;
+    position: relative;
+    color: #333;
+}
+
+.picture-this ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #000;
+}
+
+.picture-this p {
+    font-size: 17.6px;
+    line-height: 1.6;
+    color: #444;
+}
+
+@media (max-width: 1024px) {
+    .container-life {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .life-main-content h2 {
+        font-size: 35.2px;
+    }
+}
+
+
+.gallery-group {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; 
+    gap: 20px;
+    min-width: 1100px; 
+    flex-shrink: 0;
+}
+
+.gallery-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.gallery-left {
+    height: 600px; 
+}
+
+.gallery-right img {
+    height: calc(300px - 10px); 
+}
+
+@keyframes smooth-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+.scroll-track-stepped:hover {
+    animation-play-state: paused;
+}
+
+
