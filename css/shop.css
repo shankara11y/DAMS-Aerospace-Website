@@ -137,14 +137,21 @@ body {
 .product img {
   width: 100%;
   border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
 }
 
 .product h3 {
+  display : block;
+  padding-left: 15px;
   margin: 12px 0 5px;
   font-size: 16px;
 }
 
 .product p {
+    display : block;
+  padding-left: 15px;
   font-size: 14px;
   color: #555;
 }
